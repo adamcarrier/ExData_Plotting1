@@ -1,10 +1,10 @@
 ## plot1.R
 ## Coursera Exploratory Data Analysis - Course Project 1
 ## 
-## Base plotting for:
+## Histogram base plotting for:
 ## "Global Active Power (kilowatts)" consumption plotted against 
 ## "Frequency" (i.e., number of measurements at each measured consumption rate)
-## over a two-day period, 1 Feb 2007 to 2 Feb 2007
+## over a two-day period, from 1 Feb 2007 to 2 Feb 2007
 ## 
 ## Using Data set called "Individual household electric power consumption Data Set,"
 ## taken from UC Irvine Machine Learning Repository, which is
@@ -51,7 +51,6 @@ hist(df$Global_active_power,
      main = "Global Active Power", 
      xlab = "Global Active Power (kilowatts)", 
      ylab = "Frequency"
-     
      )
 axis(2, seq(0,1200,200)) # set y axis tick marks
 
