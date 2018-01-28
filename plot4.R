@@ -1,9 +1,9 @@
 ## plot4.R
 ## Coursera Exploratory Data Analysis - Course Project 1
 ## 
-## Line graph base plotting for:
-## All Energy sub metering measurements, 3 variables, by date, plotted against
-## the measurement, over a two-day period, from 1 Feb 2007 to 2 Feb 2007
+## Four base plots in a 2x2 grid for 
+## Energy consumption measurements over a two-day period, 
+## from 1 Feb 2007 to 2 Feb 2007
 ## 
 ## Using Data set called "Individual household electric power consumption Data Set,"
 ## taken from UC Irvine Machine Learning Repository, which is
