@@ -20,21 +20,20 @@ df <- read.csv(filename, sep=";", na.string="?")
 dates <- c("1/2/2007","2/2/2007")
 df <- subset(df, Date %in% dates )
 
+## Combine "Date" and "Time" into a new column so it can be graphed along the x axis
+df$DateTime <- strptime(paste(df$Date, df$Time, sep=" "), format="%d/%m/%Y %H:%M:%S")
+
 ## Call PNG graphic device
 png(file="plot3.png", width=480, height=480)
 
 ## Plot the line graph
-
-# Combine "Date" and "Time" into a new column so it can be graphed along the x axis
-df$DateTime <- strptime(paste(df$Date, df$Time, sep=" "), format="%d/%m/%Y %H:%M:%S")
-
 plot(df$DateTime, df$Sub_metering_1, type="l", col="black", xlab="", ylab="Energy sub metering")
 lines(df$DateTime, df$Sub_metering_2, type="l", col="red")
 lines(df$DateTime, df$Sub_metering_3, type="l", col="blue")
 legend("topright", 
-       col=c("black","red","blue"), 
+       col = c("black","red","blue"), 
        legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), 
-       lty=1
+       lty = 1
        )
 
 dev.off() # default back to screen

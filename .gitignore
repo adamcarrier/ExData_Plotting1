@@ -1,2 +1,5 @@
+# Ignore RStudio history
+.Rhistory
+
 # Ignore data set
 household_power_consumption.txt

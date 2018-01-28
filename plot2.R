@@ -20,14 +20,13 @@ df <- read.csv(filename, sep=";", na.string="?")
 dates <- c("1/2/2007","2/2/2007")
 df <- subset(df, Date %in% dates )
 
+## Combine "Date" and "Time" into a new column so it can be graphed along the x axis
+df$DateTime <- strptime(paste(df$Date, df$Time, sep=" "), format="%d/%m/%Y %H:%M:%S")
+
 ## Call PNG graphic device
 png(file="plot2.png", width=480, height=480)
 
 ## Plot the line graph
-
-# Combine "Date" and "Time" into a new column so it can be graphed along the x axis
-df$DateTime <- strptime(paste(df$Date, df$Time, sep=" "), format="%d/%m/%Y %H:%M:%S")
-
 plot(df$DateTime, df$Global_active_power, type="l", xlab="", ylab = "Global Active Power (kilowatts)")
 
 dev.off() # default back to screen
